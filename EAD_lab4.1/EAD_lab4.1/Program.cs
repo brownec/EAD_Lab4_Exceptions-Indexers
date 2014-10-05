@@ -50,17 +50,25 @@ namespace EAD_lab4._1
                 {
                     try
                     {
-                        /* The test class should validate the inputs by using Double.Parse() to convert the inputs 
-                        * to floating point numbers catching FormatException or OverflowExceptions if the inputs 
-                        * are invalid. */
-                        Console.Write("Enter the 1st Number: ");
-                        num1 = Double.Parse(Console.ReadLine());
+                        /* The test class should validate the inputs by using Double.Parse() to 
+                           convert the inputs to floating point numbers catching FormatException 
+                           or OverflowExceptions if the inputs are invalid. */
+
+                        // Output to user requesting data
+                        Console.Write("Enter the 1st Number: "); 
+                        num1 = Double.Parse(Console.ReadLine()); 
                         valid = true;
                     }
+                    /* In a call to a method that converts a string to some other data type, the string doesn't 
+                     * conform to the required pattern. 
+                     * This typically occurs when calling some methods of the Convert class and the Parse and 
+                     * ParseExact methods of some types. */
                     catch (FormatException)
                     {
                         valid = false;
                     }
+                    /* An arithmetic operation produces a result that is outside the range of the data type 
+                       returned by the operation */
                     catch (OverflowException)
                     {
                         valid = false;
@@ -74,8 +82,11 @@ namespace EAD_lab4._1
                 {
                     try
                     {
-                        Console.Write("Enter the 2nd Number: "); // Request the 2nd number from the user
-                        num2 = Double.Parse(Console.ReadLine()); // 
+                        // Request the 2nd number from the user
+                        Console.Write("Enter the 2nd Number: "); 
+                        /* Double.Parse converts the string the user entered into a double and allows 
+                           Console.ReadLine() return the value as a Double */
+                        num2 = Double.Parse(Console.ReadLine());
                         valid = true;
                     }
                     catch (Exception)
